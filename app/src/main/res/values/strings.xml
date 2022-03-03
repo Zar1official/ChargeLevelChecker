@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">ChargeLevelChecker</string>
+    <string name="about">SimpleNote 1.0\nCopyright © 2021 zar1official</string>
+    <string name="about_title">About</string>
+    <string name="home_title">Home</string>
+    <string name="home_description">This is home screen</string>
+    <string name="about_description">This is about screen</string>
+</resources>
