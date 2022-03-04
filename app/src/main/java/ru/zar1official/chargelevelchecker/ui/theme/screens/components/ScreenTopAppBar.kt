@@ -9,7 +9,7 @@ import androidx.compose.ui.unit.dp
 
 @Composable
 fun ScreenTopAppBar(@StringRes titleResource: Int) {
-    TopAppBar(elevation = 5.dp) {
+    TopAppBar(title = {
         Text(text = stringResource(id = titleResource))
-    }
+    }, elevation = 5.dp)
 }
