@@ -1,5 +1,7 @@
 package ru.zar1official.chargelevelchecker.ui.theme.battery
 
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -22,6 +24,7 @@ import ru.zar1official.chargelevelchecker.R
 import ru.zar1official.chargelevelchecker.ui.theme.screens.battery.BatteryViewModel
 import ru.zar1official.chargelevelchecker.ui.theme.screens.components.ScreenTopAppBar
 
+@OptIn(ExperimentalAnimationApi::class)
 @Composable
 fun BatteryScreen() {
     val viewModel: BatteryViewModel = getViewModel()
@@ -37,8 +40,8 @@ fun BatteryScreen() {
                     Battery(chargeLevel = chargeLevel.value, modifier = Modifier.clickable {
                         viewModel.onShowChargeText()
                     })
-                    if (chargeVisible.value) {
-                        Spacer(modifier = Modifier.height(30.dp))
+                    Spacer(modifier = Modifier.height(30.dp))
+                    AnimatedVisibility(visible = chargeVisible.value) {
                         Box(modifier = Modifier.width(80.dp), contentAlignment = Alignment.Center) {
                             Text(
                                 text = chargeLevel.value.toString() + "%",
